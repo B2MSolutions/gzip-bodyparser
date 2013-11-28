@@ -1,0 +1,36 @@
+  {
+  "name": "gzip-bodyparser",
+  "version": "0.0.1",
+  "author": {
+    "name": "B2M Solutions",
+    "url": "https://github.com/B2MSolutions"
+  },
+  "contributors": [{
+    "name": "Stephen Wood",
+    "url": "https://github.com/sjwood"
+  }, {
+    "name": "Youhana Hana",
+    "url": "https://github.com/Youhana-Hana"
+  }],
+  
+  "dependencies": {
+  },
+  "devDependencies": {
+    "istanbul": "0.1.45",
+    "jshint" : "2.3.0",
+    "mocha": "1.14.0",
+    "sinon": "1.7.3"
+  },
+  "scripts": {
+    "pretest": "./node_modules/jshint/bin/jshint tests; ./node_modules/jshint/bin/jshint .",
+    "test": "./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha --spec ./test/*.js",
+    "coverage": "test/coverage.sh"
+   },
+   "jshintConfig": {
+      "boss": true, 
+      "node": true,
+      "unused": true,
+      "maxlen": 100,
+      "indent": 2
+  }
+}
