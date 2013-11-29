@@ -22,7 +22,7 @@
     "sinon": "1.7.3"
   },
   "scripts": {
-    "pretest": "./node_modules/jshint/bin/jshint tests; ./node_modules/jshint/bin/jshint .",
+    "pretest": "./node_modules/jshint/bin/jshint lib",
     "test": "./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha --spec ./test/*.js",
     "coverage": "test/coverage.sh"
    },
