@@ -12,19 +12,14 @@
     "name": "Youhana Hana",
     "url": "https://github.com/Youhana-Hana"
   }],
-  
-  "dependencies": {
-  },
   "devDependencies": {
-    "istanbul": "0.1.45",
     "jshint" : "2.3.0",
     "mocha": "1.14.0",
     "sinon": "1.7.3"
   },
   "scripts": {
     "pretest": "./node_modules/jshint/bin/jshint lib",
-    "test": "./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha --spec ./test/*.js",
-    "coverage": "test/coverage.sh"
+    "test": "./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha --spec ./test/*.js"
    },
    "jshintConfig": {
       "boss": true, 
