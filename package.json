@@ -19,7 +19,7 @@
   },
   "scripts": {
     "pretest": "./node_modules/jshint/bin/jshint lib",
-    "test": "./node_modules/istanbul/lib/cli.js test ./node_modules/mocha/bin/_mocha --spec ./test/*.js"
+    "test": "./node_modules/mocha/bin/_mocha ./test/*.js"
    },
    "jshintConfig": {
       "boss": true, 
