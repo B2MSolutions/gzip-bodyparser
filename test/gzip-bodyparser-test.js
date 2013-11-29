@@ -2,7 +2,8 @@ var assert = require('assert'),
 bodyparser = require('../lib/gzip-bodyparser.js')(),
 events = require('events'),
 util = require('util'),
-buffer = require('buffer');
+zlib = require('zlib');
+
 
 describe('gzip-bodyparser fall back to next', function() {
 
@@ -97,8 +98,13 @@ describe('gzip-bodyparser should process', function() {
 		req.emit('end');
 	});
 
-	it('it should set body Json', function(done){
-		bodyparser(req, res, function(){
+	
+	it('it should unzip and return expected json', function(done){
+		bodyparser(req, res, function(err){
+			if (err) { 
+				assert(false, 'error getting data');
+			}
+
 			assert.equal('{"key": "value"}', req.rawBody);
 			assert.equal("value", req.body.key);
 			assert(req._body);
@@ -106,21 +112,53 @@ describe('gzip-bodyparser should process', function() {
 		});
 
 		var data = new Buffer('{"key": "value"}');
-		req.emit('data', data);
-		req.emit('end');
+		zlib.gzip(data, function(err, compressed){
+			if (err) {
+				assert(false, 'error compress data');
+			}
+
+			req.emit('data', compressed);
+			req.emit('end');
+		});
 	});
 
-	it('it should set retun error for invalid Json', function(done){
+	it('it should return error when failed to unzip', function(done){
 		bodyparser(req, res, function(err){
 			assert(err);
-			assert(400, err.status);
-			assert('{"key": "value"', err.body);
-			
+			assert.equal(400, err.status);
+			assert.deepEqual({}, req.body);
+			done();
+		});
+
+		var data = new Buffer('{"key": "value"}');
+		zlib.gzip(data, function(err, compressed){
+			if (err) { 
+				assert(false, 'error compress data');
+			}
+		
+			compressed = compressed.slice(1, 3);	
+			req.emit('data', compressed);
+			req.emit('end');
+		});
+	});	
+
+	it('it should return error for invalid Json', function(done){
+		bodyparser(req, res, function(err){
+			assert(err);
+			assert.equal(400, err.status);
+			assert.deepEqual({}, req.body);
 			done();
 		});
 
 		var data = new Buffer('{"key": "value"');
-		req.emit('data', data);
-		req.emit('end');
-	});
+		zlib.gzip(data, function(err, compressed){
+			if (err) { 
+				assert(false, 'error compress data');
+			}
+			
+			req.emit('data', compressed);
+			req.emit('end');
+		});
+	});	
+
 });
