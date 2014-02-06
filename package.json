@@ -1,6 +1,6 @@
   {
   "name": "gzip-bodyparser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "B2M Solutions",
     "url": "https://github.com/B2MSolutions/gzip-bodyparser.git"
@@ -11,6 +11,9 @@
   }, {
     "name": "Youhana Hana",
     "url": "https://github.com/Youhana-Hana"
+  }, {
+    "name": "Roy Lines",
+    "url": "http://roylines.co.uk"
   }],
   "devDependencies": {
     "jshint" : "2.3.0",

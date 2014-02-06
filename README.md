@@ -1,5 +1,6 @@
-gzip-bodyparser ![Travis build status](https://api.travis-ci.org/B2MSolutions/gzip-bodyparser.png)
-===============
+# gzip-bodyparser
+
+![Travis build status](https://api.travis-ci.org/B2MSolutions/gzip-bodyparser.png)
 
 Connect middleware for gunzipping json
 
