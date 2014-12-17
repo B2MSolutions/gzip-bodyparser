@@ -1,38 +1,43 @@
-  {
-    "name": "gzip-bodyparser",
-    "version": "0.0.6",
-    "author": {
-      "name": "B2M Solutions",
-      "url": "https://github.com/B2MSolutions/gzip-bodyparser.git"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git://github.com/B2MSolutions/gzip-bodyparser.git"
-    },
-    "contributors": [{
+{
+  "name": "gzip-bodyparser",
+  "version": "0.0.6",
+  "author": {
+    "name": "B2M Solutions",
+    "url": "https://github.com/B2MSolutions/gzip-bodyparser.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/B2MSolutions/gzip-bodyparser.git"
+  },
+  "contributors": [
+    {
       "name": "Stephen Wood",
       "url": "https://github.com/sjwood"
-    }, {
+    },
+    {
       "name": "Youhana Hana",
       "url": "https://github.com/Youhana-Hana"
-    }, {
+    },
+    {
       "name": "Roy Lines",
       "url": "http://roylines.co.uk"
-    }],
-    "devDependencies": {
-      "jshint": "*",
-      "mocha": "*",
-      "sinon": "*"
-    },
-    "scripts": {
-      "pretest": "./node_modules/jshint/bin/jshint lib",
-      "test": "./node_modules/mocha/bin/_mocha ./test/*.js"
-    },
-    "jshintConfig": {
-      "boss": true,
-      "node": true,
-      "unused": true,
-      "maxlen": 100,
-      "indent": 2
     }
+  ],
+  "devDependencies": {
+    "jshint": "*",
+    "mocha": "*",
+    "pre-commit": "0.0.9",
+    "sinon": "*"
+  },
+  "scripts": {
+    "pretest": "./node_modules/jshint/bin/jshint lib",
+    "test": "./node_modules/mocha/bin/_mocha ./test/*.js"
+  },
+  "jshintConfig": {
+    "boss": true,
+    "node": true,
+    "unused": true,
+    "maxlen": 100,
+    "indent": 2
   }
+}
