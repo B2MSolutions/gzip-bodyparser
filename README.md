@@ -1,6 +1,7 @@
 # gzip-bodyparser
 
-![Travis build status](https://api.travis-ci.org/B2MSolutions/gzip-bodyparser.png)
+[![Build Status](https://secure.travis-ci.org/B2MSolutions/gzip-bodyparser.png)](http://travis-ci.org/B2MSolutions/gzip-bodyparser)
+[![David Dependency Overview](https://david-dm.org/B2MSolutions/gzip-bodyparser.png "David Dependency Overview")](https://david-dm.org/B2MSolutions/gzip-bodyparser)
 
 Connect middleware for gunzipping json
 
